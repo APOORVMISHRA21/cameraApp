@@ -1,6 +1,7 @@
 package Adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.lawnics.R;
+import com.example.lawnics.showdoc;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -54,6 +56,17 @@ public class DocAdapter extends RecyclerView.Adapter<DocAdapter.ViewHolder> {
 
         holder.mDocTitle.setText(doc.getDocName());
         Picasso.get().load(doc.getDocImage()).into(holder.mDocImage);
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+               Intent intent = new Intent(context, showdoc.class);
+               intent.putExtra("doc_title", doc.getDocName());
+                intent.putExtra("doc_image", doc.getDocImage());
+                intent.putExtra("position", position);
+                context.startActivity(intent);
+            }
+        });
 
     }
 
