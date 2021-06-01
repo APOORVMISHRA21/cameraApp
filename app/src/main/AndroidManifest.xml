@@ -12,9 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Lawnics">
-        <activity android:name=".documentList">
-
-        </activity>
+        <activity android:name=".showdoc"></activity>
+        <activity android:name=".documentList"></activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
